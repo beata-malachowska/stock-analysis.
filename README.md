@@ -12,6 +12,50 @@ Refracotry code was based mostly on creating arrays to store output data from th
         Dim tickerStartingPrices(12) As Single
         Dim tickerEndingPrices(12) As Single
     
+First loop was created in order to scan though each ticker and the variable with Volumes was set to zero. 
+
+             For i = 0 To 11
+             tickerVolumes(i) = 0
+    
+Then another loop was activated to scan through each row.  Worksheet with data was activated. 
+  
+            Worksheets(yearValue).Activate
+            
+            For j = 2 To RowCount
+
+If the ticker in the database was the same as the one selected by tickerIndex then volume from this row was added to Volumes variable.
+
+                If Cells(j, 1).Value = tickers(tickerIndex) Then
+                tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(j, 8).Value
+                End If
+                
+                
+Fro each row it was checked if this is the first of the last price of the transaction and if yes then those prices were recorded in appropriate variables. 
+
+                If Cells(j - 1, 1).Value <> tickers(tickerIndex) And Cells(j, 1).Value = tickers(tickerIndex) Then
+                tickerStartingPrices(tickerIndex) = Cells(j, 6).Value
+                End If
+                
+                If Cells(j + 1, 1).Value <> tickers(tickerIndex) And Cells(j, 1).Value = tickers(tickerIndex) Then
+                tickerEndingPrices(tickerIndex) = Cells(j, 6).Value
+                End If
+
+Then, the algorythm is going to the next row and search for new ticker.                    
+
+            Next j
+
+                     
+            tickerIndex = tickerIndex + 1
+    
+Finally, the output of the search stored within variables is printed into the cells in appropriate worksheet. 
+
+
+                Worksheets("All Stocks Analysis").Activate
+                
+                Cells(4 + i, 1).Value = tickers(i)
+                Cells(4 + i, 2).Value = tickerVolumes(i)
+                Cells(4 + i, 3).Value = (tickerEndingPrices(i) / tickerStartingPrices(i)) - 1
+            
 
 In 2017 most companies had positive revenue. Only one company had negative return: TERP. 
 
