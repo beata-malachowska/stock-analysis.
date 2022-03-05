@@ -66,7 +66,7 @@ Execution times were provided in links below:
 
 [https://github.com/beata-malachowska/stock-analysis./blob/main/Resources/VBA_Challenge_2018.png]
 
-[https://github.com/beata-malachowska/stock-analysis./blob/main/Resources/VBA_Challenge_2017.png]
+[https://github.com/beata-malachowska/stock-analysis./blob/main/Resources/VBA_Chellenge_2017.png]
 
 Refractored code was faster than original one but the differences were minimal.  
 
