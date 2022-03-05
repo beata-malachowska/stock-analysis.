@@ -78,4 +78,4 @@ It shoudl be faster in execution and should contain less lines of code so in the
 
 ###How do these pros and cons apply to refactoring the original VBA script?
 
-Not worth it, I spend too much time trying to improve the code than we every saved on performing this calculations. 
+Not worth it, I spend too much time trying to improve the code than we will every saved on performing this calculations. 
