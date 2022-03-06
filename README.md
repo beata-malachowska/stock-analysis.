@@ -86,4 +86,4 @@ It was faster in execution of the refractoring code and it contained less lines 
 
 ###How do these pros and cons apply to refactoring the original VBA script?
 
-In this example, I spend too much time trying to improve the code than we will every saved on performing this calculations. 
+In this example, I spend too much time trying to improve the code than we will every saved on performing this calculations. However for more complicated operation it would be good to remember that loop in loop operations take so much more time.
